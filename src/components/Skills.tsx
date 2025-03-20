@@ -53,18 +53,18 @@ const Skills: React.FC = () => {
   return (
     <div className="section-reveal py-8">
       <div className="flex items-center mb-6">
-        <div className="h-8 w-8 rounded-full bg-accent/20 flex items-center justify-center mr-3">
-          <Wrench className="h-4 w-4 text-accent" />
+        <div className="h-8 w-8 rounded-full bg-purple-600/20 flex items-center justify-center mr-3">
+          <Wrench className="h-4 w-4 text-purple-600" />
         </div>
         <h2 className="text-2xl font-bold">Skills & Expertise</h2>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {categories.map(category => (
-          <Card key={category.id} className="neo-glass overflow-hidden">
+          <Card key={category.id} className="neo-glass overflow-hidden border-purple-600/20">
             <CardHeader className="pb-2">
               <CardTitle className="flex items-center text-lg">
-                <div className="h-6 w-6 rounded-full bg-accent/20 flex items-center justify-center mr-2">
+                <div className="h-6 w-6 rounded-full bg-purple-600/20 flex items-center justify-center mr-2">
                   {category.icon}
                 </div>
                 {category.name}
@@ -77,7 +77,7 @@ const Skills: React.FC = () => {
                   <div key={skill.id} className="space-y-1">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center">
-                        {skill.icon}
+                        <span className="text-purple-600">{skill.icon}</span>
                         <span className="ml-2 text-sm font-medium">{skill.name}</span>
                       </div>
                       <TooltipProvider>
@@ -86,7 +86,7 @@ const Skills: React.FC = () => {
                             <Button 
                               variant="ghost" 
                               size="sm" 
-                              className="h-7 px-2 text-xs font-medium"
+                              className="h-7 px-2 text-xs font-medium hover:bg-purple-600/10 hover:text-purple-600"
                               onClick={() => handleEndorseSkill(skill.id)}
                             >
                               <ThumbsUp className="h-3 w-3 mr-1" />
@@ -99,7 +99,11 @@ const Skills: React.FC = () => {
                         </Tooltip>
                       </TooltipProvider>
                     </div>
-                    <Progress value={skill.level} className="h-2" />
+                    <Progress value={skill.level} className="h-2 bg-gray-200" 
+                      style={{
+                        "--progress-background": "rgb(124, 58, 237)",
+                      } as React.CSSProperties}
+                    />
                   </div>
                 ))
               }
@@ -112,20 +116,20 @@ const Skills: React.FC = () => {
         <h3 className="text-lg font-semibold mb-4">Laboratory Capabilities</h3>
         
         <div className="flex flex-wrap gap-2">
-          <Badge className="skill-badge">Milligram to kilogram scale reactions</Badge>
-          <Badge className="skill-badge">Air sensitive organic reagents</Badge>
-          <Badge className="skill-badge">High-pressure reactions (Autoclave)</Badge>
-          <Badge className="skill-badge">Bruker NMR</Badge>
-          <Badge className="skill-badge">FT-IR Spectroscopy</Badge>
-          <Badge className="skill-badge">LCMS/HPLC</Badge>
-          <Badge className="skill-badge">Flash column chromatography</Badge>
-          <Badge className="skill-badge">Biotage purification</Badge>
-          <Badge className="skill-badge">Isolera purification</Badge>
-          <Badge className="skill-badge">HPLC purification</Badge>
-          <Badge className="skill-badge">Crystallization</Badge>
-          <Badge className="skill-badge">Vacuum distillation</Badge>
-          <Badge className="skill-badge">SciFinder</Badge>
-          <Badge className="skill-badge">Reaxys</Badge>
+          <Badge className="lab-capability">Milligram to kilogram scale reactions</Badge>
+          <Badge className="lab-capability">Air sensitive organic reagents</Badge>
+          <Badge className="lab-capability">High-pressure reactions (Autoclave)</Badge>
+          <Badge className="lab-capability">Bruker NMR</Badge>
+          <Badge className="lab-capability">FT-IR Spectroscopy</Badge>
+          <Badge className="lab-capability">LCMS/HPLC</Badge>
+          <Badge className="lab-capability">Flash column chromatography</Badge>
+          <Badge className="lab-capability">Biotage purification</Badge>
+          <Badge className="lab-capability">Isolera purification</Badge>
+          <Badge className="lab-capability">HPLC purification</Badge>
+          <Badge className="lab-capability">Crystallization</Badge>
+          <Badge className="lab-capability">Vacuum distillation</Badge>
+          <Badge className="lab-capability">SciFinder</Badge>
+          <Badge className="lab-capability">Reaxys</Badge>
         </div>
       </div>
     </div>
