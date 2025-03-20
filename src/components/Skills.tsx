@@ -59,10 +59,10 @@ const Skills: React.FC = () => {
         <h2 className="text-2xl font-bold">Skills & Expertise</h2>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {categories.map(category => (
-          <Card key={category.id} className="neo-glass overflow-hidden border-purple-600/20">
-            <CardHeader className="pb-2">
+          <Card key={category.id} className="neo-glass overflow-hidden border-purple-600/20 h-full">
+            <CardHeader className="pb-2 bg-purple-600/10">
               <CardTitle className="flex items-center text-lg">
                 <div className="h-6 w-6 rounded-full bg-purple-600/20 flex items-center justify-center mr-2">
                   {category.icon}
@@ -70,15 +70,15 @@ const Skills: React.FC = () => {
                 {category.name}
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 p-4">
               {skills
                 .filter(skill => skill.category === category.id)
                 .map(skill => (
-                  <div key={skill.id} className="space-y-1">
+                  <div key={skill.id} className="space-y-2 mb-4">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center">
-                        <span className="text-purple-600">{skill.icon}</span>
-                        <span className="ml-2 text-sm font-medium">{skill.name}</span>
+                        <span className="text-purple-600 mr-2">{skill.icon}</span>
+                        <span className="text-sm font-medium">{skill.name}</span>
                       </div>
                       <TooltipProvider>
                         <Tooltip>
@@ -86,7 +86,7 @@ const Skills: React.FC = () => {
                             <Button 
                               variant="ghost" 
                               size="sm" 
-                              className="h-7 px-2 text-xs font-medium hover:bg-purple-600/10 hover:text-purple-600"
+                              className="h-7 px-2 text-xs font-medium bg-purple-600/10 text-purple-600 hover:bg-purple-600/20 hover:text-purple-600"
                               onClick={() => handleEndorseSkill(skill.id)}
                             >
                               <ThumbsUp className="h-3 w-3 mr-1" />
@@ -99,7 +99,7 @@ const Skills: React.FC = () => {
                         </Tooltip>
                       </TooltipProvider>
                     </div>
-                    <Progress value={skill.level} className="h-2 bg-gray-200" 
+                    <Progress value={skill.level} className="h-2 bg-gray-200/50" 
                       style={{
                         "--progress-background": "rgb(124, 58, 237)",
                       } as React.CSSProperties}
@@ -112,10 +112,10 @@ const Skills: React.FC = () => {
         ))}
       </div>
       
-      <div className="mt-8">
+      <div className="mt-8 bg-purple-600/5 p-6 rounded-lg backdrop-blur-sm border border-purple-600/20">
         <h3 className="text-lg font-semibold mb-4">Laboratory Capabilities</h3>
         
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           <Badge className="lab-capability">Milligram to kilogram scale reactions</Badge>
           <Badge className="lab-capability">Air sensitive organic reagents</Badge>
           <Badge className="lab-capability">High-pressure reactions (Autoclave)</Badge>

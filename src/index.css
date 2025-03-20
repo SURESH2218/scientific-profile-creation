@@ -246,6 +246,7 @@
 .lab-capability:hover {
   background-color: rgba(124, 58, 237, 0.25);
   transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(124, 58, 237, 0.2);
 }
 
 /* Update the Progress component's indicator color for skills */
@@ -256,6 +257,7 @@
 .neo-glass {
   @apply backdrop-blur-xl border shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2)];
   background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(124, 58, 237, 0.2);
 }
 
 /* Fix button hover states */

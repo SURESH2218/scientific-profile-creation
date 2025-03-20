@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Trophy, CalendarDays } from 'lucide-react';
+import { Trophy, CalendarDays, Award, Medal } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -11,34 +11,39 @@ const Awards: React.FC = () => {
       title: "Stronger BC future skills grant",
       issuer: "Continuing Business Studies, Sauder School of Business",
       value: "3500 CAD",
-      date: "Jun 2023"
+      date: "Jun 2023",
+      icon: <Award className="h-4 w-4" />
     },
     {
       id: 2,
       title: "Mitacs accelerate post-doctoral fellowship",
       issuer: "Mitacs",
-      date: "2020–2021"
+      date: "2020–2021",
+      icon: <Medal className="h-4 w-4" />
     },
     {
       id: 3,
       title: "Bourse de fin d'études doctorales",
       issuer: "Université de Montréal",
       value: "10,000 CAD",
-      date: "January 2018"
+      date: "January 2018",
+      icon: <Award className="h-4 w-4" />
     },
     {
       id: 4,
       title: "Québec Tuition Fee Exemption grant for Ph.D.",
       issuer: "Ministry of Human Resources, Government of India",
       value: "26,000 CAD",
-      date: "2015-16"
+      date: "2015-16",
+      icon: <Trophy className="h-4 w-4" />
     },
     {
       id: 5,
       title: "Québec Tuition Fee Exemption grant for M.Sc.",
       issuer: "Ministry of Human Resources, Government of India",
       value: "39,000 CAD",
-      date: "2013-14"
+      date: "2013-14",
+      icon: <Trophy className="h-4 w-4" />
     }
   ];
 
@@ -80,20 +85,27 @@ const Awards: React.FC = () => {
             <h2 className="text-2xl font-bold">Awards & Achievements</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
             {awards.map((award) => (
-              <Card key={award.id} className="neo-glass">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg font-semibold">{award.title}</CardTitle>
-                  <CardDescription>{award.issuer}</CardDescription>
+              <Card key={award.id} className="neo-glass overflow-hidden border-purple-600/20">
+                <CardHeader className="pb-2 bg-gradient-to-r from-purple-600/10 to-transparent">
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-full bg-purple-600/20 flex items-center justify-center">
+                      {award.icon || <Trophy className="h-4 w-4 text-purple-600" />}
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-semibold">{award.title}</CardTitle>
+                      <CardDescription>{award.issuer}</CardDescription>
+                    </div>
+                  </div>
                 </CardHeader>
-                <CardContent className="pt-0 flex justify-between items-center">
+                <CardContent className="pt-2 flex justify-between items-center">
                   {award.value && (
-                    <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white border-none">
+                    <Badge className="bg-gradient-to-r from-purple-600 to-purple-500 text-white border-none">
                       {award.value}
                     </Badge>
                   )}
-                  <Badge className="bg-white/10 backdrop-blur-sm text-foreground">
+                  <Badge className="bg-white/10 backdrop-blur-sm text-foreground border-purple-600/20">
                     <CalendarDays className="mr-1 h-3 w-3" />
                     {award.date}
                   </Badge>
@@ -103,13 +115,13 @@ const Awards: React.FC = () => {
           </div>
         </div>
         
-        <div>
+        <div className="bg-purple-600/5 p-6 rounded-lg backdrop-blur-sm border border-purple-600/20">
           <h2 className="text-xl font-bold mb-4">Conferences & Presentations</h2>
           
           <div className="space-y-4">
             {conferences.map((conference) => (
-              <Card key={conference.id} className="neo-glass">
-                <CardHeader className="pb-2">
+              <Card key={conference.id} className="neo-glass overflow-hidden">
+                <CardHeader className="pb-2 bg-gradient-to-r from-purple-600/10 to-transparent">
                   <div className="flex justify-between">
                     <CardTitle className="text-lg font-semibold">{conference.title}</CardTitle>
                     <Badge className={`${
@@ -122,9 +134,9 @@ const Awards: React.FC = () => {
                   </div>
                   <CardDescription>{conference.authors}</CardDescription>
                 </CardHeader>
-                <CardContent className="pt-0">
+                <CardContent className="pt-2">
                   <div className="text-sm mb-2">{conference.venue}</div>
-                  <Badge className="bg-white/10 backdrop-blur-sm text-foreground">
+                  <Badge className="bg-white/10 backdrop-blur-sm text-foreground border-purple-600/20">
                     <CalendarDays className="mr-1 h-3 w-3" />
                     {conference.date}
                   </Badge>
