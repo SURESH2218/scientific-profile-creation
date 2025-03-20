@@ -9,17 +9,23 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 const ProfileHeader: React.FC = () => {
   return (
     <div className="section-reveal w-full py-6 md:py-12 flex flex-col md:flex-row gap-8">
-      <div className="relative w-full md:w-1/3 flex justify-center md:justify-start">
-        <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden premium-glass p-1">
-          <div className="w-full h-full rounded-full overflow-hidden border border-white/20">
+      <div className="relative w-full md:w-1/3 flex justify-center items-center">
+        <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden p-1" 
+             style={{
+               background: "linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(139, 92, 246, 0.3))",
+               backdropFilter: "blur(9px)",
+               boxShadow: "0 10px 32px 10px rgba(31, 38, 135, 0.37)",
+               border: "1px solid rgba(255, 255, 255, 0.18)"
+             }}>
+          <div className="w-full h-full rounded-full overflow-hidden bg-violet-500/30 backdrop-blur-sm border border-white/30">
             <Avatar className="w-full h-full">
               <AvatarImage src="/profile-prasad.jpg" alt="Dr. N. D. Prasad Atmuri" className="object-cover" />
-              <AvatarFallback className="bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-3xl font-bold text-gray-500">
+              <AvatarFallback className="bg-gradient-to-br from-purple-200 to-violet-300 flex items-center justify-center text-3xl font-bold text-violet-700">
                 NDP
               </AvatarFallback>
             </Avatar>
           </div>
-          <div className="absolute -bottom-1 -right-1 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg">
+          <div className="absolute -bottom-1 -right-1 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-white/20">
             <div className="text-white text-xs font-bold">Ph.D</div>
           </div>
         </div>
