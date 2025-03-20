@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Activity, Bell, Award, BookOpen, FileText, Users, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -77,24 +77,72 @@ const ActivityFeed: React.FC = () => {
     }
   ]);
 
-  const [isScrolling, setIsScrolling] = useState(false);
+  const [conferences, setConferences] = useState([
+    {
+      id: 1,
+      title: "International Conference on Medicinal Chemistry",
+      location: "Boston, USA",
+      date: "May 2023",
+      presentation: "Oral Presentation: 'Novel Lipid Designs for Drug Delivery'"
+    },
+    {
+      id: 2,
+      title: "European Symposium on Organic Chemistry",
+      location: "Vienna, Austria",
+      date: "September 2022",
+      presentation: "Poster Presentation: 'Synthesis of Sulfur-containing Lipids'"
+    },
+    {
+      id: 3,
+      title: "American Chemical Society National Meeting",
+      location: "San Francisco, USA",
+      date: "March 2022",
+      presentation: "Oral Presentation: 'Advances in Lipid-based Drug Delivery Systems'"
+    }
+  ]);
+
+  const [activeTab, setActiveTab] = useState('activity');
+  const [isAnimating, setIsAnimating] = useState(false);
+  const activityListRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsScrolling(true);
-      setTimeout(() => {
-        setActivities(prev => {
-          const newActivities = [...prev];
-          const first = newActivities.shift();
-          if (first) newActivities.push(first);
-          return newActivities;
-        });
-        setIsScrolling(false);
-      }, 500);
+      if (activeTab === 'activity') {
+        rotateActivities();
+      }
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [activities, activeTab]);
+
+  const rotateActivities = () => {
+    if (isAnimating) return;
+    
+    setIsAnimating(true);
+    
+    if (activityListRef.current) {
+      activityListRef.current.style.opacity = '0';
+      activityListRef.current.style.transform = 'translateY(10px)';
+    }
+    
+    setTimeout(() => {
+      setActivities(prev => {
+        const newActivities = [...prev];
+        const first = newActivities.shift();
+        if (first) newActivities.push(first);
+        return newActivities;
+      });
+      
+      if (activityListRef.current) {
+        activityListRef.current.style.opacity = '1';
+        activityListRef.current.style.transform = 'translateY(0)';
+      }
+      
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 300);
+    }, 300);
+  };
 
   const getBackgroundColor = (type: string) => {
     switch (type) {
@@ -115,13 +163,16 @@ const ActivityFeed: React.FC = () => {
 
   return (
     <div className="section-reveal py-8">
-      <Tabs defaultValue="activity" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 neo-glass mb-6">
-          <TabsTrigger value="activity" className="data-[state=active]:bg-accent data-[state=active]:text-white">
+      <Tabs defaultValue="activity" value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <TabsList className="grid w-full grid-cols-3 neo-glass mb-6">
+          <TabsTrigger value="activity" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
             <Activity className="mr-2 h-4 w-4" /> Activity Feed
           </TabsTrigger>
-          <TabsTrigger value="references" className="data-[state=active]:bg-accent data-[state=active]:text-white">
-            <Users className="mr-2 h-4 w-4" /> References & Testimonials
+          <TabsTrigger value="conferences" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
+            <MessageCircle className="mr-2 h-4 w-4" /> Conferences
+          </TabsTrigger>
+          <TabsTrigger value="references" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white">
+            <Users className="mr-2 h-4 w-4" /> References
           </TabsTrigger>
         </TabsList>
         
@@ -135,7 +186,8 @@ const ActivityFeed: React.FC = () => {
               <CardContent className="space-y-4 pb-4">
                 <div className="relative overflow-hidden" style={{ height: '250px' }}>
                   <div 
-                    className={`space-y-4 transition-transform duration-500 ease-in-out ${isScrolling ? 'opacity-0' : 'opacity-100'}`}
+                    ref={activityListRef}
+                    className="space-y-4 transition-all duration-300 ease-in-out"
                   >
                     {activities.map((activity) => (
                       <div key={activity.id} className="flex items-start space-x-4">
@@ -187,6 +239,28 @@ const ActivityFeed: React.FC = () => {
           </div>
         </TabsContent>
         
+        <TabsContent value="conferences">
+          <div className="space-y-4">
+            {conferences.map(conference => (
+              <Card key={conference.id} className="neo-glass border-purple-200/30 dark:border-purple-800/30 overflow-hidden">
+                <div className="bg-gradient-to-r from-purple-600/10 to-blue-500/5 py-3 px-4 border-b border-purple-200/30 dark:border-purple-800/30">
+                  <h3 className="text-lg font-medium">{conference.title}</h3>
+                  <div className="flex items-center justify-between">
+                    <p className="text-sm text-muted-foreground">{conference.location}</p>
+                    <Badge className="bg-purple-600 text-white border-none">{conference.date}</Badge>
+                  </div>
+                </div>
+                <CardContent className="p-4">
+                  <div className="flex items-start">
+                    <MessageCircle className="h-5 w-5 text-purple-600 mr-2 mt-0.5" />
+                    <p className="text-sm">{conference.presentation}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
+        
         <TabsContent value="references">
           <div className="space-y-4">
             {references.map((reference) => (
@@ -194,7 +268,7 @@ const ActivityFeed: React.FC = () => {
                 <CardHeader className="pb-2">
                   <div className="flex items-start">
                     <Avatar className="h-12 w-12 mr-4">
-                      <AvatarFallback className="bg-accent text-white">
+                      <AvatarFallback className="bg-purple-600 text-white">
                         {reference.name.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>
@@ -209,7 +283,7 @@ const ActivityFeed: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       <div className="text-sm">
                         <span className="font-medium">Email: </span>
-                        <a href={`mailto:${reference.contact}`} className="text-accent hover:underline">
+                        <a href={`mailto:${reference.contact}`} className="text-purple-600 hover:underline">
                           {reference.contact}
                         </a>
                       </div>
