@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Beaker, Flask, Cog, Wrench, ThumbsUp, FileSearch, CircleDashed } from 'lucide-react';
+import { Beaker, FlaskConical, Cog, Wrench, ThumbsUp, FileSearch, CircleDashed } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
@@ -21,8 +21,8 @@ const Skills: React.FC = () => {
   const [skills, setSkills] = useState<SkillType[]>([
     { id: 'organic-synthesis', name: 'Organic Synthesis', level: 95, endorsements: 28, category: 'synthesis', icon: <Beaker className="h-4 w-4" /> },
     { id: 'lipid-design', name: 'Novel Lipid Design', level: 92, endorsements: 24, category: 'synthesis', icon: <Beaker className="h-4 w-4" /> },
-    { id: 'medicinal-chem', name: 'Medicinal Chemistry', level: 90, endorsements: 22, category: 'synthesis', icon: <Flask className="h-4 w-4" /> },
-    { id: 'peptide-design', name: 'Peptidomimetic Design', level: 87, endorsements: 19, category: 'synthesis', icon: <Flask className="h-4 w-4" /> },
+    { id: 'medicinal-chem', name: 'Medicinal Chemistry', level: 90, endorsements: 22, category: 'synthesis', icon: <FlaskConical className="h-4 w-4" /> },
+    { id: 'peptide-design', name: 'Peptidomimetic Design', level: 87, endorsements: 19, category: 'synthesis', icon: <FlaskConical className="h-4 w-4" /> },
     { id: 'air-sensitive', name: 'Air-Sensitive Reactions', level: 85, endorsements: 16, category: 'techniques', icon: <CircleDashed className="h-4 w-4" /> },
     { id: 'high-pressure', name: 'High-Pressure Reactions', level: 82, endorsements: 14, category: 'techniques', icon: <CircleDashed className="h-4 w-4" /> },
     { id: 'nmr', name: 'NMR Spectroscopy', level: 88, endorsements: 18, category: 'analytical', icon: <Cog className="h-4 w-4" /> },
