@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Share2, MessageSquare, Users, Heart } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const ProfileHeader: React.FC = () => {
   return (
@@ -11,9 +12,12 @@ const ProfileHeader: React.FC = () => {
       <div className="relative w-full md:w-1/3 flex justify-center md:justify-start">
         <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden premium-glass p-1">
           <div className="w-full h-full rounded-full overflow-hidden border border-white/20">
-            <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-3xl font-bold text-gray-500">
-              NDP
-            </div>
+            <Avatar className="w-full h-full">
+              <AvatarImage src="/profile-prasad.jpg" alt="Dr. N. D. Prasad Atmuri" className="object-cover" />
+              <AvatarFallback className="bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-3xl font-bold text-gray-500">
+                NDP
+              </AvatarFallback>
+            </Avatar>
           </div>
           <div className="absolute -bottom-1 -right-1 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg">
             <div className="text-white text-xs font-bold">Ph.D</div>
