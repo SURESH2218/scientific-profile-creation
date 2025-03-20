@@ -31,18 +31,18 @@ const ProfileHeader: React.FC = () => {
         </div>
         
         {/* Achievement badges positioned around the avatar */}
-        <div className="absolute -top-2 -right-2 md:top-0 md:right-1/4">
+        <div className="absolute -top-2 -right-2 md:right-8 md:top-56">
           <div className="bg-gradient-to-r from-amber-400 to-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg flex items-center">
             <Star className="h-3 w-3 mr-1 text-white" fill="white" />
             Top Scientist
           </div>
         </div>
-        <div className="absolute bottom-0 -left-2 md:bottom-1/4 md:left-1/4">
+        {/* <div className="absolute bottom-0 -left-2 md:bottom-1/4 md:left-1/4">
           <div className="bg-gradient-to-r from-teal-400 to-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg flex items-center">
             <TrendingUp className="h-3 w-3 mr-1" />
             Leading Researcher
           </div>
-        </div>
+        </div> */}
       </div>
       
       <div className="w-full md:w-2/3 space-y-3 md:space-y-4">
