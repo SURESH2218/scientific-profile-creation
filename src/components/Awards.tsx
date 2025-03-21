@@ -122,7 +122,7 @@ const Awards: React.FC = () => {
             {conferences.map((conference) => (
               <Card key={conference.id} className="neo-glass overflow-hidden">
                 <CardHeader className="pb-2 bg-gradient-to-r from-purple-600/10 to-transparent">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-start gap-2">
                     <CardTitle className="text-lg font-semibold">{conference.title}</CardTitle>
                     <Badge className={`${
                       conference.type === 'Oral' 

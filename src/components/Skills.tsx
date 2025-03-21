@@ -71,16 +71,16 @@ const Skills: React.FC = () => {
                           <span className="text-purple-600 mr-2">{skill.icon}</span>
                           <span className="text-sm font-medium">{skill.name}</span>
                         </div>
-                        <span className="text-xs font-semibold bg-gradient-to-r from-purple-600 to-indigo-500 text-white px-2 py-0.5 rounded-full">
+                        {/* <span className="text-xs font-semibold bg-gradient-to-r from-purple-600 to-indigo-500 text-white px-2 py-0.5 rounded-full">
                           {skill.level}%
-                        </span>
+                        </span> */}
                       </div>
-                      <div className="h-2 w-full rounded-full bg-gray-200/50 overflow-hidden">
+                      {/* <div className="h-2 w-full rounded-full bg-gray-200/50 overflow-hidden">
                         <div 
                           className={`h-full rounded-full bg-gradient-to-r ${getProgressColor(skill.level)}`}
                           style={{ width: `${skill.level}%` }}
                         />
-                      </div>
+                      </div> */}
                     </div>
                   ))
                 }

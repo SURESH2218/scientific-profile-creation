@@ -12,9 +12,9 @@ const ProfileHeader: React.FC = () => {
       <div className="relative w-full md:w-1/3 flex justify-center items-center">
         <div className="relative w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden p-1" 
              style={{
-               background: "linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(139, 92, 246, 0.3))",
+              //  background: "linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(139, 92, 246, 0.3))",
                backdropFilter: "blur(9px)",
-               boxShadow: "0 10px 32px 10px rgba(31, 38, 135, 0.37)",
+               boxShadow: "0 10px 10px 0px rgba(31, 38, 135, 0.37)",
                border: "1px solid rgba(255, 255, 255, 0.18)"
              }}>
           <div className="w-full h-full rounded-full overflow-hidden bg-violet-500/30 backdrop-blur-sm border border-white/30">
@@ -25,9 +25,9 @@ const ProfileHeader: React.FC = () => {
               </AvatarFallback>
             </Avatar>
           </div>
-          <div className="absolute -bottom-1 -right-1 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-white/20">
+          {/* <div className="absolute -bottom-1 -right-1 w-12 h-12 bg-violet-600 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm border border-white/20">
             <div className="text-white text-xs font-bold">Ph.D</div>
-          </div>
+          </div> */}
         </div>
         
         {/* Achievement badges positioned around the avatar */}
@@ -55,6 +55,14 @@ const ProfileHeader: React.FC = () => {
             <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">N. D. Prasad Atmuri, Ph.D.</h1>
             <Badge className="ml-2 bg-purple-600 text-white border-none">Verified</Badge>
           </div>
+          {/* <div className="flex flex-wrap items-center gap-2">
+            <Badge className=" text-white border-none hover:from-indigo-600 hover:to-blue-600 px-2 py-1">Medicinal Chemist</Badge>
+            <Badge className=" text-white border-none hover:from-blue-600 hover:to-teal-600 px-2 py-1">Drug Delivery Systems</Badge>
+          </div>
+          <div className="flex items-center">
+            <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-black">N. D. Prasad Atmuri, Ph.D.</h1>
+            <Badge className="ml-2 bg-purple-600 text-white border-none">Verified</Badge>
+          </div> */}
           <h2 className="text-base md:text-lg text-muted-foreground">Medicinal Chemist specializing in lipid synthesis and drug delivery systems</h2>
         </div>
         
