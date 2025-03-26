@@ -26,9 +26,9 @@ const Index = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="md:col-span-2 space-y-4">
+          <Publications />
           <WorkExperience />
           <Education />
-          <Publications />
         </div>
         
         <div className="space-y-4">

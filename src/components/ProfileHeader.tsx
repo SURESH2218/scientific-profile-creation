@@ -76,7 +76,7 @@ const ProfileHeader: React.FC = () => {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white border-none shadow-md transition-all duration-300">
+                <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 text-white hover:text-white border-none shadow-md transition-all duration-300">
                   <MessageSquare className="mr-2 h-4 w-4" />
                   <span>Connect</span>
                 </Button>

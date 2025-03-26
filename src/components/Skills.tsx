@@ -94,20 +94,20 @@ const Skills: React.FC = () => {
         <h3 className="text-lg font-semibold text-purple-700 dark:text-purple-300 mb-4">Laboratory Capabilities</h3>
         
         <div className="flex flex-wrap gap-3">
-          <Badge className="lab-capability">Milligram to kilogram scale reactions</Badge>
-          <Badge className="lab-capability">Air sensitive organic reagents</Badge>
-          <Badge className="lab-capability">High-pressure reactions (Autoclave)</Badge>
-          <Badge className="lab-capability">Bruker NMR</Badge>
-          <Badge className="lab-capability">FT-IR Spectroscopy</Badge>
-          <Badge className="lab-capability">LCMS/HPLC</Badge>
-          <Badge className="lab-capability">Flash column chromatography</Badge>
-          <Badge className="lab-capability">Biotage purification</Badge>
-          <Badge className="lab-capability">Isolera purification</Badge>
-          <Badge className="lab-capability">HPLC purification</Badge>
-          <Badge className="lab-capability">Crystallization</Badge>
-          <Badge className="lab-capability">Vacuum distillation</Badge>
-          <Badge className="lab-capability">SciFinder</Badge>
-          <Badge className="lab-capability">Reaxys</Badge>
+          <div className="lab-capability">Milligram to kilogram scale reactions</div>
+          <div className="lab-capability">Air sensitive organic reagents</div>
+          <div className="lab-capability">High-pressure reactions (Autoclave)</div>
+          <div className="lab-capability">Bruker NMR</div>
+          <div className="lab-capability">FT-IR Spectroscopy</div>
+          <div className="lab-capability">LCMS/HPLC</div>
+          <div className="lab-capability">Flash column chromatography</div>
+          <div className="lab-capability">Biotage purification</div>
+          <div className="lab-capability">Isolera purification</div>
+          <div className="lab-capability">HPLC purification</div>
+          <div className="lab-capability">Crystallization</div>
+          <div className="lab-capability">Vacuum distillation</div>
+          <div className="lab-capability">SciFinder</div>
+          <div className="lab-capability">Reaxys</div>
         </div>
       </div>
     </div>

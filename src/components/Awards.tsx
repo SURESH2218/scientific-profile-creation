@@ -105,7 +105,7 @@ const Awards: React.FC = () => {
                       {award.value}
                     </Badge>
                   )}
-                  <Badge className="bg-white/10 backdrop-blur-sm text-foreground border-purple-600/20">
+                  <Badge className="">
                     <CalendarDays className="mr-1 h-3 w-3" />
                     {award.date}
                   </Badge>
@@ -136,7 +136,7 @@ const Awards: React.FC = () => {
                 </CardHeader>
                 <CardContent className="pt-2">
                   <div className="text-sm mb-2">{conference.venue}</div>
-                  <Badge className="bg-white/10 backdrop-blur-sm text-foreground border-purple-600/20">
+                  <Badge className="">
                     <CalendarDays className="mr-1 h-3 w-3" />
                     {conference.date}
                   </Badge>

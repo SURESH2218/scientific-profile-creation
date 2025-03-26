@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -75,7 +74,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,7 +95,7 @@
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
-  
+
   html {
     @apply scroll-smooth;
   }
@@ -107,7 +106,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
@@ -117,58 +116,58 @@
     position: relative;
     overflow: hidden;
   }
-  
+
   .glass-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 200%;
     height: 100%;
     background-image: linear-gradient(
-      90deg, 
-      rgba(255, 255, 255, 0) 0%, 
-      rgba(255, 255, 255, 0.1) 50%, 
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
       rgba(255, 255, 255, 0) 100%
     );
     transition: transform 0.6s;
     pointer-events: none;
   }
-  
+
   .glass-card:hover::before {
     transform: translateX(50%);
   }
-  
+
   .neo-glass {
     @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2)];
   }
-  
+
   .premium-glass {
     @apply backdrop-blur-xl bg-gradient-to-br from-white/20 via-white/10 to-transparent border border-white/20 shadow-xl;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-blue-500;
   }
-  
+
   .section-reveal {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-  
+
   .section-reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   .shine-effect {
     position: relative;
     overflow: hidden;
   }
-  
+
   .shine-effect::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     left: -50%;
@@ -183,7 +182,7 @@
     transform: rotate(30deg);
     animation: shine 3s infinite;
   }
-  
+
   @keyframes shine {
     0% {
       transform: rotate(30deg) translate(-30%, -30%);
@@ -195,11 +194,26 @@
 }
 
 .mesh-background {
-  background-image: 
-    radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 25%),
-    radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 25%),
-    radial-gradient(circle at 40% 70%, rgba(16, 185, 129, 0.15) 0%, transparent 25%),
-    radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 25%);
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(139, 92, 246, 0.15) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(59, 130, 246, 0.15) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 40% 70%,
+      rgba(16, 185, 129, 0.15) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 70% 80%,
+      rgba(236, 72, 153, 0.05) 0%,
+      transparent 25%
+    );
   background-size: 100% 100%;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -224,12 +238,16 @@
 }
 
 .skill-badge:before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 9999px;
   padding: 1px;
-  background: linear-gradient(90deg, rgba(124, 58, 237, 0.5), rgba(139, 92, 246, 0.5));
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.5),
+    rgba(139, 92, 246, 0.5)
+  );
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -237,17 +255,17 @@
 
 .lab-capability {
   @apply relative inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
-  background-color: rgba(124, 58, 237, 0.15);
-  color: rgb(124, 58, 237);
+  background-color: rgba(208, 185, 247, 0.15);
+  color: rgb(146, 95, 235);
   border: 1px solid rgba(124, 58, 237, 0.3);
   transition: all 0.2s ease-in-out;
 }
 
-.lab-capability:hover {
+/* .lab-capability:hover {
   background-color: rgba(124, 58, 237, 0.25);
   transform: translateY(-1px);
   box-shadow: 0 2px 5px rgba(124, 58, 237, 0.2);
-}
+} */
 
 /* Update the Progress component's indicator color for skills */
 :root {

@@ -7,7 +7,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { Badge } from '@/components/ui/badge';
 import { toast } from '@/components/ui/use-toast';
 
-interface WorkExperienceProps {}
+// interface WorkExperienceProps {}
 
 const WorkExperience: React.FC<WorkExperienceProps> = () => {
   const [endorsements, setEndorsements] = useState<Record<string, number>>({
@@ -70,7 +70,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="text-xs neo-glass text-foreground hover:bg-white/10"
+                        className="text-xs neo-glass text-black"
                         onClick={() => handleEndorse('nanovation')}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" /> 
@@ -116,7 +116,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="text-xs neo-glass text-foreground hover:bg-white/10"
+                        className="text-xs neo-glass text-black"
                         onClick={() => handleEndorse('senior')}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" /> 
@@ -162,7 +162,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="text-xs neo-glass text-foreground hover:bg-white/10"
+                        className="text-xs neo-glass text-black"
                         onClick={() => handleEndorse('mitacs')}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" /> 
@@ -202,7 +202,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="text-xs neo-glass text-foreground hover:bg-white/10"
+                        className="text-xs neo-glass text-black"
                         onClick={() => handleEndorse('syngene')}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" /> 
@@ -240,7 +240,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="text-xs neo-glass text-foreground hover:bg-white/10"
+                        className="text-xs neo-glass text-black"
                         onClick={() => handleEndorse('hetero')}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" /> 
