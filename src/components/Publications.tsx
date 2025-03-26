@@ -54,7 +54,7 @@ const Publications: React.FC = () => {
         <h2 className="text-2xl font-bold">Publications & Patents</h2>
       </div>
 
-      <Tabs defaultValue="patents" className="w-full">
+      <Tabs defaultValue="publications" className="w-full">
         <TabsList className="grid w-full grid-cols-2 neo-glass mb-6">
           <TabsTrigger
             value="publications"
