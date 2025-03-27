@@ -1,11 +1,21 @@
-
-import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, CalendarDays, ThumbsUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { Badge } from '@/components/ui/badge';
-import { toast } from '@/components/ui/use-toast';
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Briefcase, CalendarDays, ThumbsUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/badge";
+import { toast } from "@/components/ui/use-toast";
 
 // interface WorkExperienceProps {}
 
@@ -23,7 +33,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
       ...prev,
       [id]: prev[id] + 1,
     }));
-    
+
     toast({
       title: "Skill Endorsed",
       description: "Thank you for your endorsement!",
@@ -32,7 +42,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
   };
 
   return (
-    <div className="section-reveal py-8">
+    <div className="">
       <div className="flex items-center mb-6">
         <div className="h-8 w-8 rounded-full bg-accent/20 flex items-center justify-center mr-3">
           <Briefcase className="h-4 w-4 text-accent" />
@@ -45,7 +55,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
-                <CardTitle className="text-xl font-semibold">Associate Principal Scientist</CardTitle>
+                <CardTitle className="text-xl font-semibold">
+                  Associate Principal Scientist
+                </CardTitle>
                 <CardDescription className="text-base font-medium">
                   NanoVation Therapeutics Inc., Vancouver, BC
                 </CardDescription>
@@ -57,23 +69,29 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           </CardHeader>
           <CardContent className="space-y-3">
             <ul className="list-disc pl-5 space-y-2">
-              <li>Design and synthesis of various novel lipids and mRNA caps</li>
-              <li>Development of safe, stable, and effective LNP delivery systems</li>
-              <li>Supervision and technical documentation for research operations</li>
+              <li>
+                Design and synthesis of various novel lipids and mRNA caps
+              </li>
+              <li>
+                Development of safe, stable, and effective LNP delivery systems
+              </li>
+              <li>
+                Supervision and technical documentation for research operations
+              </li>
             </ul>
-            
+
             <div className="flex justify-between items-center pt-2">
               <div className="flex gap-2">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
+                      <Button
+                        variant="outline"
+                        size="sm"
                         className="text-xs neo-glass text-black"
-                        onClick={() => handleEndorse('nanovation')}
+                        onClick={() => handleEndorse("nanovation")}
                       >
-                        <ThumbsUp className="mr-1 h-3 w-3" /> 
+                        <ThumbsUp className="mr-1 h-3 w-3" />
                         Vouch for Skills ({endorsements.nanovation})
                       </Button>
                     </TooltipTrigger>
@@ -91,7 +109,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
-                <CardTitle className="text-xl font-semibold">Senior Synthetic Chemist</CardTitle>
+                <CardTitle className="text-xl font-semibold">
+                  Senior Synthetic Chemist
+                </CardTitle>
                 <CardDescription className="text-base font-medium">
                   NanoVation Therapeutics Inc., Vancouver, BC
                 </CardDescription>
@@ -103,23 +123,32 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           </CardHeader>
           <CardContent className="space-y-3">
             <ul className="list-disc pl-5 space-y-2">
-              <li>Designing novel lipids from prior art searches, synthesis, and characterization</li>
-              <li>Exploring the structural activity relationships (SAR) of diverse cationic lipids</li>
-              <li>Modifying the pKa of LNPs by altering the cationic lipid structure</li>
+              <li>
+                Designing novel lipids from prior art searches, synthesis, and
+                characterization
+              </li>
+              <li>
+                Exploring the structural activity relationships (SAR) of diverse
+                cationic lipids
+              </li>
+              <li>
+                Modifying the pKa of LNPs by altering the cationic lipid
+                structure
+              </li>
             </ul>
-            
+
             <div className="flex justify-between items-center pt-2">
               <div className="flex gap-2">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
+                      <Button
+                        variant="outline"
+                        size="sm"
                         className="text-xs neo-glass text-black"
-                        onClick={() => handleEndorse('senior')}
+                        onClick={() => handleEndorse("senior")}
                       >
-                        <ThumbsUp className="mr-1 h-3 w-3" /> 
+                        <ThumbsUp className="mr-1 h-3 w-3" />
                         Vouch for Skills ({endorsements.senior})
                       </Button>
                     </TooltipTrigger>
@@ -137,7 +166,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
-                <CardTitle className="text-xl font-semibold">Mitacs Accelerate Postdoctoral Fellow</CardTitle>
+                <CardTitle className="text-xl font-semibold">
+                  Mitacs Accelerate Postdoctoral Fellow
+                </CardTitle>
                 <CardDescription className="text-base font-medium">
                   University of British Columbia, BC
                 </CardDescription>
@@ -148,24 +179,31 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
             </div>
           </CardHeader>
           <CardContent className="space-y-3">
-            <p className="text-sm text-muted-foreground">Research Director: Professor Marco A. Ciufolini</p>
+            <p className="text-sm text-muted-foreground">
+              Research Director: Professor Marco A. Ciufolini
+            </p>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Design and Synthesis of cathepsin k protein inhibitors (Azatanshinone analogs)</li>
-              <li>Development of Angiotensin receptor blockers and ACE inhibitors</li>
+              <li>
+                Design and Synthesis of cathepsin k protein inhibitors
+                (Azatanshinone analogs)
+              </li>
+              <li>
+                Development of Angiotensin receptor blockers and ACE inhibitors
+              </li>
             </ul>
-            
+
             <div className="flex justify-between items-center pt-2">
               <div className="flex gap-2">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
+                      <Button
+                        variant="outline"
+                        size="sm"
                         className="text-xs neo-glass text-black"
-                        onClick={() => handleEndorse('mitacs')}
+                        onClick={() => handleEndorse("mitacs")}
                       >
-                        <ThumbsUp className="mr-1 h-3 w-3" /> 
+                        <ThumbsUp className="mr-1 h-3 w-3" />
                         Vouch for Skills ({endorsements.mitacs})
                       </Button>
                     </TooltipTrigger>
@@ -183,7 +221,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           <Card className="neo-glass flex-1">
             <CardHeader className="pb-2">
               <div>
-                <CardTitle className="text-lg font-semibold">Associate Scientist</CardTitle>
+                <CardTitle className="text-lg font-semibold">
+                  Associate Scientist
+                </CardTitle>
                 <CardDescription className="text-sm font-medium">
                   Syngene International Limited, Bengaluru, India
                 </CardDescription>
@@ -193,19 +233,23 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
               </div>
             </CardHeader>
             <CardContent className="space-y-2">
-              <p className="text-sm">Design, synthesis, purification, and characterization of medicinal chemistry targets for PTC-Bio, Merck, Abbott and AstraZeneca-UK in an FTE setting.</p>
-              
+              <p className="text-sm">
+                Design, synthesis, purification, and characterization of
+                medicinal chemistry targets for PTC-Bio, Merck, Abbott and
+                AstraZeneca-UK in an FTE setting.
+              </p>
+
               <div className="flex justify-end">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
+                      <Button
+                        variant="outline"
+                        size="sm"
                         className="text-xs neo-glass text-black"
-                        onClick={() => handleEndorse('syngene')}
+                        onClick={() => handleEndorse("syngene")}
                       >
-                        <ThumbsUp className="mr-1 h-3 w-3" /> 
+                        <ThumbsUp className="mr-1 h-3 w-3" />
                         Vouch ({endorsements.syngene})
                       </Button>
                     </TooltipTrigger>
@@ -221,7 +265,9 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           <Card className="neo-glass flex-1">
             <CardHeader className="pb-2">
               <div>
-                <CardTitle className="text-lg font-semibold">R&D Chemist</CardTitle>
+                <CardTitle className="text-lg font-semibold">
+                  R&D Chemist
+                </CardTitle>
                 <CardDescription className="text-sm font-medium">
                   Hetero Drugs Limited, Hyderabad, India
                 </CardDescription>
@@ -231,19 +277,23 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
               </div>
             </CardHeader>
             <CardContent className="space-y-2">
-              <p className="text-sm">Development and commercial validation of active pharmaceutical ingredient (API) processes under GMP guideline at the piolet plant level.</p>
-              
+              <p className="text-sm">
+                Development and commercial validation of active pharmaceutical
+                ingredient (API) processes under GMP guideline at the piolet
+                plant level.
+              </p>
+
               <div className="flex justify-end">
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
+                      <Button
+                        variant="outline"
+                        size="sm"
                         className="text-xs neo-glass text-black"
-                        onClick={() => handleEndorse('hetero')}
+                        onClick={() => handleEndorse("hetero")}
                       >
-                        <ThumbsUp className="mr-1 h-3 w-3" /> 
+                        <ThumbsUp className="mr-1 h-3 w-3" />
                         Vouch ({endorsements.hetero})
                       </Button>
                     </TooltipTrigger>
