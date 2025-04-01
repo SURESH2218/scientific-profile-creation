@@ -138,11 +138,11 @@
     transform: translateX(50%);
   }
 
-  .neo-glass {
+  . {
     @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2)];
   }
 
-  .premium-glass {
+  . {
     @apply backdrop-blur-xl bg-gradient-to-br from-white/20 via-white/10 to-transparent border border-white/20 shadow-xl;
   }
 
@@ -272,7 +272,7 @@
   --progress-background: rgb(124, 58, 237);
 }
 
-.neo-glass {
+. {
   @apply backdrop-blur-xl border shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2)];
   background-color: rgba(255, 255, 255, 0.06);
   border-color: rgba(124, 58, 237, 0.2);
@@ -308,7 +308,7 @@ button:hover {
 .connection-line {
   stroke: rgba(59, 130, 246, 0.2);
   stroke-width: 2.5;
-  stroke-dasharray: 3,3;
+  stroke-dasharray: 3, 3;
   animation: flowLine 3s linear infinite;
   filter: drop-shadow(0 0 1px rgba(99, 102, 241, 0.2));
 }

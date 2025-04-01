@@ -32,22 +32,17 @@ const Index = () => {
         <div className="md:col-span-2 space-y-4">
           <Publications />
           <Education />
+          <WorkExperience />
           <Awards />
         </div>
 
         <div className="space-y-4">
-          <WorkExperienceSummary
-            onViewFull={() => setIsWorkExperienceOpen(true)}
-          />
+          <WorkExperienceSummary />
           <Skills />
           <ActivityFeed />
         </div>
       </div>
 
-      <WorkExperienceModal
-        isOpen={isWorkExperienceOpen}
-        onClose={() => setIsWorkExperienceOpen(false)}
-      />
 
       <ScrollToTop />
     </ProfileLayout>

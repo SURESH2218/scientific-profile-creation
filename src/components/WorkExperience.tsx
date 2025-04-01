@@ -19,7 +19,7 @@ import { toast } from "@/components/ui/use-toast";
 
 // interface WorkExperienceProps {}
 
-const WorkExperience: React.FC<WorkExperienceProps> = () => {
+const WorkExperience: React.FC = () => {
   const [endorsements, setEndorsements] = useState<Record<string, number>>({
     nanovation: 12,
     senior: 8,
@@ -42,7 +42,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
   };
 
   return (
-    <div className="">
+    <div className="" id="work-experience-section">
       <div className="flex items-center mb-6">
         <div className="h-8 w-8 rounded-full bg-accent/20 flex items-center justify-center mr-3">
           <Briefcase className="h-4 w-4 text-accent" />
@@ -51,7 +51,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
       </div>
 
       <div className="space-y-6">
-        <Card className="neo-glass animate-float">
+        <Card className=" animate-float">
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
@@ -88,7 +88,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="text-xs neo-glass text-black"
+                        className="text-xs  text-black"
                         onClick={() => handleEndorse("nanovation")}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" />
@@ -105,7 +105,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           </CardContent>
         </Card>
 
-        <Card className="neo-glass">
+        <Card className="">
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
@@ -145,7 +145,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="text-xs neo-glass text-black"
+                        className="text-xs  text-black"
                         onClick={() => handleEndorse("senior")}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" />
@@ -162,7 +162,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
           </CardContent>
         </Card>
 
-        <Card className="neo-glass">
+        <Card className="">
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
@@ -200,7 +200,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="text-xs neo-glass text-black"
+                        className="text-xs  text-black"
                         onClick={() => handleEndorse("mitacs")}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" />
@@ -218,7 +218,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
         </Card>
 
         <div className="flex flex-col md:flex-row gap-4">
-          <Card className="neo-glass flex-1">
+          <Card className=" flex-1">
             <CardHeader className="pb-2">
               <div>
                 <CardTitle className="text-lg font-semibold">
@@ -246,7 +246,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="text-xs neo-glass text-black"
+                        className="text-xs  text-black"
                         onClick={() => handleEndorse("syngene")}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" />
@@ -262,7 +262,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
             </CardContent>
           </Card>
 
-          <Card className="neo-glass flex-1">
+          <Card className=" flex-1">
             <CardHeader className="pb-2">
               <div>
                 <CardTitle className="text-lg font-semibold">
@@ -290,7 +290,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="text-xs neo-glass text-black"
+                        className="text-xs  text-black"
                         onClick={() => handleEndorse("hetero")}
                       >
                         <ThumbsUp className="mr-1 h-3 w-3" />

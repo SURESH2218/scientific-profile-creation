@@ -44,7 +44,7 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-3xl mx-auto mb-8">
+    <div className="w-full max-w-3xl mx-auto mb-8 mt-[-50px] mr-[500px]">
       <div className="flex items-center justify-center gap-4">
         {tabs.map((tab) => {
           const Icon = tab.icon;

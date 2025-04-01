@@ -3,17 +3,23 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Briefcase } from "lucide-react";
 
-interface WorkExperienceSummaryProps {
-  onViewFull: () => void;
-}
+// interface WorkExperienceSummaryProps {
+//   onViewFull: () => void;
+// }
 
-const WorkExperienceSummary: React.FC<WorkExperienceSummaryProps> = ({
-  onViewFull,
-}) => {
+const WorkExperienceSummary: React.FC = () => {
+  const scrollToWorkExperience = () => {
+    const workExperienceSection = document.getElementById(
+      "work-experience-section"
+    );
+    if (workExperienceSection) {
+      workExperienceSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="space-y-3 md:space-y-4">
       <div className="flex items-center mb-4 relative">
-        <div className="absolute top-0 right-0 bg-gradient-to-br from-accent to-blue-500 text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
+        <div className="absolute top-0 right-0 bg-gradient-to-br from-accent to-blue-500 text-white px-3 py-1 text-xs font-semibold rounded-bl-lg rounded-tr-lg">
           17+ Years
         </div>
         <div className="h-8 w-8 rounded-full bg-accent/20 flex items-center justify-center mr-3">
@@ -22,7 +28,7 @@ const WorkExperienceSummary: React.FC<WorkExperienceSummaryProps> = ({
         <h2 className="text-2xl font-bold">Work Experience</h2>
       </div>
 
-      <div className="premium-glass p-4 rounded-lg overflow-hidden relative">
+      <div className="bg-white border-gray-300 border p-4 rounded-lg overflow-hidden relative">
         <div className="space-y-3">
           <div className="space-y-2">
             <div className="flex items-center justify-between">
@@ -68,8 +74,8 @@ const WorkExperienceSummary: React.FC<WorkExperienceSummaryProps> = ({
 
           <Button
             variant="outline"
-            className="w-full neo-glass text-foreground hover:bg-purple-600/10 hover:text-purple-600 transition-all duration-300"
-            onClick={onViewFull}
+            className="w-full  text-foreground hover:bg-purple-600/10 hover:text-purple-600 transition-all duration-300"
+            onClick={scrollToWorkExperience}
           >
             <Briefcase className="mr-2 h-4 w-4" />
             View Full Experience

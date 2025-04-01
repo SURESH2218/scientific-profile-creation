@@ -47,7 +47,7 @@ const Publications = () => {
   const [highlightedPaper, setHighlightedPaper] = useState<number | null>(null);
 
   // Toggle between navigation styles - "orbital", "floating", "tabstrip", or "hub"
-  const navStyle = "orbital" as NavStyle;
+  const navStyle = "tabstrip" as NavStyle;
 
   const tabs = [
     {
@@ -229,10 +229,8 @@ const Publications = () => {
               ].map((patent) => (
                 <Card
                   key={patent.id}
-                  className={`neo-glass transition-all duration-300 ${
-                    highlightedPatent === patent.id
-                      ? "ring-2 ring-accent shadow-lg"
-                      : ""
+                  className={`transition-all duration-300 border-gray-200 ${
+                    highlightedPatent === patent.id ? "ring-2 ring-accent" : ""
                   }`}
                   onMouseEnter={() => setHighlightedPatent(patent.id)}
                   onMouseLeave={() => setHighlightedPatent(null)}
@@ -257,7 +255,7 @@ const Publications = () => {
                             <Button
                               size="sm"
                               variant="outline"
-                              className="text-xs neo-glass text-black"
+                              className="text-xs  text-black"
                               onClick={() => handleCite("patent", patent.id)}
                             >
                               <FileText className="mr-1 h-3 w-3" />
@@ -276,7 +274,7 @@ const Publications = () => {
                             <Button
                               size="sm"
                               variant="outline"
-                              className="text-xs neo-glass text-black"
+                              className="text-xs  text-black"
                               onClick={() => handleRequest("patent", patent.id)}
                             >
                               <ExternalLink className="mr-1 h-3 w-3" />
@@ -354,9 +352,9 @@ const Publications = () => {
               ].map((paper) => (
                 <Card
                   key={paper.id}
-                  className={`neo-glass transition-all duration-300 ${
+                  className={`transition-all duration-300 ${
                     highlightedPaper === paper.id
-                      ? "ring-2 ring-accent shadow-lg"
+                      ? "ring-2 ring-accent shadow-xs"
                       : ""
                   }`}
                   onMouseEnter={() => setHighlightedPaper(paper.id)}
@@ -364,7 +362,7 @@ const Publications = () => {
                 >
                   <CardHeader className="pb-2">
                     <div className="flex items-start justify-between">
-                      <CardTitle className="text-lg font-semibold">
+                      <CardTitle className="text-lg font-semibold flex-1">
                         {paper.title}
                       </CardTitle>
                       {paper.featured && (
@@ -373,30 +371,11 @@ const Publications = () => {
                         </Badge>
                       )}
                     </div>
-                    <CardDescription className="text-sm">
+                    <CardDescription className="text-sm flex items-center justify-between">
                       {paper.authors}
-                      {paper.note && (
+                      {/* {paper.note && (
                         <span className="italic ml-1">({paper.note})</span>
-                      )}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="text-sm mb-3">
-                      {paper.journal}, {paper.year}, {paper.volume},{" "}
-                      {paper.pages}
-                    </div>
-                    <div className="flex items-center gap-2 mb-3">
-                      {paper.citations > 0 && (
-                        <Badge
-                          variant="outline"
-                          className="text-xs flex items-center gap-1"
-                        >
-                          <ThumbsUp className="h-3 w-3" />
-                          {paper.citations} Citations
-                        </Badge>
-                      )}
-                    </div>
-                    <div className="flex flex-wrap gap-2">
+                      )} */}
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>
@@ -415,33 +394,18 @@ const Publications = () => {
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
-
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              className="text-xs neo-glass text-black"
-                              onClick={() =>
-                                handleCite("publication", paper.id)
-                              }
-                            >
-                              <FileText className="mr-1 h-3 w-3" />
-                              Cite This Work
-                            </Button>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Get citation information</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="text-sm mb-3">
+                      {paper.journal}, {paper.year}, {paper.volume},{" "}
+                      {paper.pages}
                     </div>
                   </CardContent>
                 </Card>
               ))}
 
-              <Card className="neo-glass">
+              <Card className="">
                 <CardHeader>
                   <CardTitle className="text-lg">Book Chapter</CardTitle>
                 </CardHeader>
@@ -469,7 +433,7 @@ const Publications = () => {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="text-xs neo-glass text-black"
+                            className="text-xs  text-black"
                             onClick={() => handleCite("book", 1)}
                           >
                             <FileText className="mr-1 h-3 w-3" />
@@ -485,7 +449,7 @@ const Publications = () => {
                 </CardContent>
               </Card>
 
-              <div className="premium-glass p-4 rounded-xl mt-2">
+              <div className=" p-4 rounded-xl mt-2">
                 <div className="flex items-center mb-2">
                   <Award className="h-5 w-5 text-amber-400 mr-2" />
                   <h3 className="text-lg font-semibold">

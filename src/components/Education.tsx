@@ -28,7 +28,7 @@ const Education: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="premium-glass overflow-hidden">
+        <Card className="overflow-hidden relative">
           <div className="absolute top-0 right-0 bg-gradient-to-br from-accent to-blue-500 text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
             Doctoral
           </div>
@@ -62,7 +62,7 @@ const Education: React.FC = () => {
           </CardContent>
         </Card>
 
-        <Card className="premium-glass overflow-hidden">
+        <Card className="overflow-hidden relative">
           <div className="absolute top-0 right-0 bg-gradient-to-br from-blue-500 to-teal-500 text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
             Master's
           </div>
