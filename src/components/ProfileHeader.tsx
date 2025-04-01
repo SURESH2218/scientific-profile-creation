@@ -202,9 +202,6 @@ const ProfileHeader: React.FC = () => {
         </div>
 
         <div className="bg-white shadow-xs border border-gray-200 p-4 rounded-xl overflow-hidden relative">
-          {/* <div className="absolute top-0 right-0 bg-gradient-to-br from-accent to-blue-500 text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
-            Doctoral
-          </div> */}
           <div className="space-y-3">
             <div>
               <div className="flex justify-between items-center">
@@ -227,13 +224,13 @@ const ProfileHeader: React.FC = () => {
               <div className="flex justify-between items-center">
                 <div>
                   <h3 className="font-semibold text-sm">
-                    Ph.D. in Organic and Medicinal Chemistry
+                    M.Sc. in Organic Chemistry
                   </h3>
                   <p className="text-xs text-muted-foreground">
                     Université de Montréal, Canada
                   </p>
                 </div>
-                <p className="text-xs font-bold">2015 - 2019</p>
+                <p className="text-xs font-bold">2013 - 2014</p>
               </div>
               <div className="mt-2">
                 <p className="text-xs font-medium">Research Director:</p>
@@ -243,18 +240,12 @@ const ProfileHeader: React.FC = () => {
             <div>
               <div className="flex justify-between items-center">
                 <div>
-                  <h3 className="font-semibold text-sm">
-                    Ph.D. in Organic and Medicinal Chemistry
-                  </h3>
+                  <h3 className="font-semibold text-sm">B.Sc. in Chemistry</h3>
                   <p className="text-xs text-muted-foreground">
-                    Université de Montréal, Canada
+                    Nagarjuna University, India
                   </p>
                 </div>
-                <p className="text-xs font-bold">2015 - 2019</p>
-              </div>
-              <div className="mt-2">
-                <p className="text-xs font-medium">Research Director:</p>
-                <p className="text-xs">Professor William D. Lubell</p>
+                <p className="text-xs font-bold">2001 - 2004</p>
               </div>
             </div>
 

@@ -73,8 +73,8 @@ const WorkExperienceSummary: React.FC = () => {
           </div>
 
           <Button
-            variant="outline"
-            className="w-full  text-foreground hover:bg-purple-600/10 hover:text-purple-600 transition-all duration-300"
+            variant="link"
+            className="w-full  text-foreground hover:text-purple-600 transition-all duration-300"
             onClick={scrollToWorkExperience}
           >
             <Briefcase className="mr-2 h-4 w-4" />

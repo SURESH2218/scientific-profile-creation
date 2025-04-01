@@ -43,7 +43,6 @@ const Index = () => {
         </div>
       </div>
 
-
       <ScrollToTop />
     </ProfileLayout>
   );

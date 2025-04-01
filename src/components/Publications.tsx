@@ -49,6 +49,29 @@ const Publications = () => {
   // Toggle between navigation styles - "orbital", "floating", "tabstrip", or "hub"
   const navStyle = "tabstrip" as NavStyle;
 
+  const handleTabClick = (tabName: string) => {
+    setActiveTab(tabName);
+    // Add a small delay to ensure the tab change is processed
+    setTimeout(() => {
+      if (tabName === "awards") {
+        const awardsSection = document.getElementById("awards-section");
+        if (awardsSection) {
+          awardsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else if (tabName === "conferences") {
+        const conferencesSection = document.getElementById(
+          "conferences-section"
+        );
+        if (conferencesSection) {
+          conferencesSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    }, 100);
+  };
+
   const tabs = [
     {
       name: "publications",
@@ -90,40 +113,43 @@ const Publications = () => {
           <h2 className="text-2xl font-bold">Publications & Patents</h2>
         </div> */}
 
-        <div className="navigation-container mb-8">
+        <div className="navigation-container mb-4">
           {(() => {
             switch (navStyle) {
               case "floating":
                 return (
                   <FloatingPublicationsNav
                     activeTab={activeTab}
-                    setActiveTab={setActiveTab}
+                    setActiveTab={handleTabClick}
                   />
                 );
               case "tabstrip":
                 return (
                   <TabStripPublicationsNav
                     activeTab={activeTab}
-                    setActiveTab={setActiveTab}
+                    setActiveTab={handleTabClick}
                   />
                 );
               case "hub":
                 return (
                   <InteractiveHubNav
                     activeTab={activeTab}
-                    setActiveTab={setActiveTab}
+                    setActiveTab={handleTabClick}
                   />
                 );
               case "carousel":
                 return (
                   <CarouselNav
                     activeTab={activeTab}
-                    setActiveTab={setActiveTab}
+                    setActiveTab={handleTabClick}
                   />
                 );
               case "book":
                 return (
-                  <BookNav activeTab={activeTab} setActiveTab={setActiveTab} />
+                  <BookNav
+                    activeTab={activeTab}
+                    setActiveTab={handleTabClick}
+                  />
                 );
               case "orbital":
               default:
@@ -172,7 +198,7 @@ const Publications = () => {
                         return (
                           <button
                             key={tab.name}
-                            onClick={() => setActiveTab(tab.name)}
+                            onClick={() => handleTabClick(tab.name)}
                             className={`orbital-item ${tab.position} ${
                               isActive ? "active" : ""
                             }`}
@@ -477,19 +503,51 @@ const Publications = () => {
             </div>
           )}
 
-          {/* {activeTab === "awards" && (
+          {activeTab === "awards" && (
             <div className="space-y-4">
-              <div className="text-center text-gray-500">
-                Awards section coming soon...
+              <div className="text-center py-8">
+                <p className="text-muted-foreground mb-4">
+                  Viewing awards and conferences in the dedicated section below.
+                </p>
+                <Button
+                  variant="outline"
+                  className="neo-glass text-foreground hover:bg-purple-600/10 hover:text-purple-600 transition-all duration-300"
+                  onClick={() => {
+                    const awardsSection =
+                      document.getElementById("awards-section");
+                    if (awardsSection) {
+                      awardsSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
+                  <Award className="mr-2 h-4 w-4" />
+                  View Awards & Conferences
+                </Button>
               </div>
             </div>
-          )} */}
+          )}
 
           {activeTab === "conferences" && (
             <div className="space-y-4">
-              {/* Conferences content */}
-              <div className="text-center text-gray-500">
-                Conferences section coming soon...
+              <div className="text-center py-8">
+                <p className="text-muted-foreground mb-4">
+                  Viewing conferences in the dedicated section below.
+                </p>
+                <Button
+                  variant="outline"
+                  className="neo-glass text-foreground hover:bg-purple-600/10 hover:text-purple-600 transition-all duration-300"
+                  onClick={() => {
+                    const awardsSection = document.getElementById(
+                      "conferences-section"
+                    );
+                    if (awardsSection) {
+                      awardsSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
+                  <Users className="mr-2 h-4 w-4" />
+                  View Conferences
+                </Button>
               </div>
             </div>
           )}

@@ -86,7 +86,7 @@ const Awards: React.FC = () => {
   ];
 
   return (
-    <div className="section-reveal py-8">
+    <div id="awards-section" className="section-reveal py-8">
       <div className="space-y-8">
         <div>
           <div className="flex items-center mb-6">
@@ -133,7 +133,10 @@ const Awards: React.FC = () => {
           </div>
         </div>
 
-        <div className=" p-6 rounded-lg backdrop-blur-sm border border-purple-600/20">
+        <div
+          id="conferences-section"
+          className="p-6 rounded-lg backdrop-blur-sm border border-purple-600/20"
+        >
           <h2 className="text-xl font-bold mb-4">
             Conferences & Presentations
           </h2>

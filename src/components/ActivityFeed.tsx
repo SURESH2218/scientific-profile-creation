@@ -209,7 +209,7 @@ const ActivityFeed: React.FC = () => {
 
         <TabsContent value="activity">
           <div className="space-y-4">
-            <Card className=" overflow-hidden">
+            <Card className=" overflow-hidden border-2 border-purple-200/30 dark:border-purple-800/30">
               <CardHeader>
                 <CardTitle>Recent Activity</CardTitle>
                 <CardDescription>
@@ -219,7 +219,7 @@ const ActivityFeed: React.FC = () => {
               <CardContent className="space-y-4 pb-4">
                 <div
                   className="relative overflow-hidden"
-                  style={{ height: "250px" }}
+                  style={{ height: "" }}
                 >
                   <div
                     ref={activityListRef}
@@ -260,7 +260,10 @@ const ActivityFeed: React.FC = () => {
                 <CardTitle>Milestones & Achievements</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-3">
-                <Badge className=" text-foreground hover:bg-white/10 px-3 py-2 h-auto">
+                <div
+                  className="px-3 py-2 h-auto border border-amber-400/30 rounded-md"
+                  style={{ borderColor: "rgba(255, 165, 0, 0.3)" }}
+                >
                   <Award className="mr-2 h-4 w-4 text-amber-400" />
                   <div className="flex flex-col items-start">
                     <span className="font-semibold">3 Patents Filed</span>
@@ -268,9 +271,12 @@ const ActivityFeed: React.FC = () => {
                       Within last 3 years
                     </span>
                   </div>
-                </Badge>
+                </div>
 
-                <Badge className=" text-foreground hover:bg-white/10 px-3 py-2 h-auto">
+                <div
+                  className="px-3 py-2 h-auto border border-blue-400/30 rounded-md"
+                  style={{ borderColor: "rgba(59, 130, 246, 0.3)" }}
+                >
                   <BookOpen className="mr-2 h-4 w-4 text-blue-400" />
                   <div className="flex flex-col items-start">
                     <span className="font-semibold">8+ Publications</span>
@@ -278,9 +284,12 @@ const ActivityFeed: React.FC = () => {
                       In peer-reviewed journals
                     </span>
                   </div>
-                </Badge>
+                </div>
 
-                <Badge className=" text-foreground hover:bg-white/10 px-3 py-2 h-auto">
+                <div
+                  className="px-3 py-2 h-auto border border-green-400/30 rounded-md"
+                  style={{ borderColor: "rgba(34, 197, 94, 0.3)" }}
+                >
                   <MessageCircle className="mr-2 h-4 w-4 text-green-400" />
                   <div className="flex flex-col items-start">
                     <span className="font-semibold">
@@ -290,7 +299,7 @@ const ActivityFeed: React.FC = () => {
                       Including oral presentations
                     </span>
                   </div>
-                </Badge>
+                </div>
               </CardContent>
             </Card>
           </div>

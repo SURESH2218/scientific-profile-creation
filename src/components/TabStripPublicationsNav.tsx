@@ -32,19 +32,19 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
       icon: Award,
       label: "Awards",
       color: "from-amber-500 to-orange-500",
-      count: "Coming Soon",
+      count: "",
     },
     {
       name: "conferences",
       icon: Users,
       label: "Conferences",
       color: "from-rose-500 to-pink-500",
-      count: "Coming Soon",
+      count: "",
     },
   ];
 
   return (
-    <div className="w-full max-w-3xl mx-auto mb-8 mt-[-50px] mr-[500px]">
+    <div className="w-full max-w-3xl mx-auto mt-[-35px] mr-[500px]">
       <div className="flex items-center justify-center gap-4">
         {tabs.map((tab) => {
           const Icon = tab.icon;
@@ -54,16 +54,16 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
             <button
               key={tab.name}
               onClick={() => setActiveTab(tab.name)}
-              className="relative group"
+              className="relative hover:bg-transparent focus:bg-transparent active:bg-transparent"
             >
               {/* Main Tab Container */}
               <div
                 className={cn(
-                  "relative px-6 py-3 rounded-xl transition-all duration-300",
+                  "relative px-6 py-3 rounded-xl",
                   "flex items-center gap-3",
-                  "bg-white/5 hover:bg-white/10",
-                  "border border-white/10",
-                  isActive && "bg-white/15"
+                  isActive ? "bg-white/15" : "bg-transparent",
+                  "hover:bg-transparent focus:bg-transparent active:bg-transparent",
+                  "border border-white/10"
                 )}
               >
                 {/* Icon Container */}
@@ -73,7 +73,6 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
                     "bg-gradient-to-br",
                     tab.color,
                     "transition-transform duration-300",
-                    "group-hover:scale-110",
                     isActive && "scale-110"
                   )}
                 >
@@ -81,7 +80,7 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
                 </div>
 
                 {/* Text Content */}
-                <div className="text-left">
+                <div className="text-left hover:bg-transparent">
                   <div className="font-medium text-sm">{tab.label}</div>
                   <div className="text-xs opacity-60">{tab.count}</div>
                 </div>
@@ -100,15 +99,15 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
                 )}
               </div>
 
-              {/* Hover Glow Effect */}
-              <div
+              {/* Hover Glow Effect - Disabled for now */}
+              {/* <div
                 className={cn(
-                  "absolute inset-0 opacity-0 group-hover:opacity-20",
+                  "absolute inset-0 opacity-0",
                   "rounded-xl blur-xl transition-opacity duration-300",
-                  "bg-gradient-to-r",
+                  "bg-gradient-to-r pointer-events-none",
                   tab.color
                 )}
-              />
+              /> */}
             </button>
           );
         })}
