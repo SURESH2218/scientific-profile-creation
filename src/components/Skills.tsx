@@ -135,7 +135,7 @@ const Skills: React.FC = () => {
 
       <div className="grid grid-cols-1 gap-6">
         {categories.map((category) => (
-          <Card key={category.id} className=" border-purple-600/20">
+          <Card key={category.id} className=" border-purple-600/20 overflow-hidden">
             <CardHeader className="pb-2 bg-gradient-to-r from-purple-600/10 to-indigo-500/5">
               <CardTitle className="flex items-center text-lg text-purple-600">
                 <div className="h-6 w-6 rounded-full bg-purple-600/20 flex items-center justify-center mr-2">
