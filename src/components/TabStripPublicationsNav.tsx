@@ -41,10 +41,17 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
       color: "from-rose-500 to-pink-500",
       count: "",
     },
+    {
+      name: "fun",
+      icon: Users,
+      label: "Fun",
+      color: "from-blue-500 to-purple-500",
+      count: "",
+    },
   ];
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-[-35px] mr-[500px]">
+    <div className="w-full max-w-3xl mx-auto mt-[-35px]">
       <div className="flex items-center justify-center gap-4">
         {tabs.map((tab) => {
           const Icon = tab.icon;
@@ -54,16 +61,17 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
             <button
               key={tab.name}
               onClick={() => setActiveTab(tab.name)}
-              className="relative hover:bg-transparent focus:bg-transparent active:bg-transparent"
+              className="relative group hover:bg-transparent focus:bg-transparent active:bg-transparent"
             >
               {/* Main Tab Container */}
               <div
                 className={cn(
-                  "relative px-6 py-3 rounded-xl",
+                  "relative px-6 py-3 rounded-xl z-10",
                   "flex items-center gap-3",
                   isActive ? "bg-white/15" : "bg-transparent",
-                  "hover:bg-transparent focus:bg-transparent active:bg-transparent",
-                  "border border-white/10"
+                  "hover:bg-white/5",
+                  "border border-white/10",
+                  "transition-all duration-300"
                 )}
               >
                 {/* Icon Container */}
@@ -99,15 +107,8 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
                 )}
               </div>
 
-              {/* Hover Glow Effect - Disabled for now */}
-              {/* <div
-                className={cn(
-                  "absolute inset-0 opacity-0",
-                  "rounded-xl blur-xl transition-opacity duration-300",
-                  "bg-gradient-to-r pointer-events-none",
-                  tab.color
-                )}
-              /> */}
+              {/* Hover Glow Effect */}
+              <div />
             </button>
           );
         })}

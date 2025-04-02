@@ -37,16 +37,16 @@ const ProfileHeader: React.FC = () => {
           {/* Avatar Section */}
           <div className="relative col-span-1 md:col-span-2 flex justify-center items-center">
             <div
-              className="relative w-48 h-48 md:w-52 md:h-52 rounded-full overflow-hidden p-1"
+              className="relative w-48 h-48 md:w-52 md:h-52 overflow-hidden"
               style={{
-                //  background: "linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(139, 92, 246, 0.3))",
+                borderRadius: "0px 90px 0px 70px",
                 backdropFilter: "blur(9px)",
                 boxShadow: "0 10px 10px 0px rgba(31, 38, 135, 0.37)",
                 border: "1px solid rgba(255, 255, 255, 0.18)",
               }}
             >
-              <div className="w-full h-full rounded-full overflow-hidden bg-violet-500/30 backdrop-blur-sm border border-white/30">
-                <Avatar className="w-full h-full">
+              <div className="w-full h-full overflow-hidden backdrop-blur-sm border border-white/30">
+                <Avatar className="w-full h-full !rounded-none">
                   <AvatarImage
                     src="/profile-prasad.jpg"
                     alt="Dr. N. D. Prasad Atmuri"
@@ -104,7 +104,7 @@ const ProfileHeader: React.FC = () => {
                 <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-black">N. D. Prasad Atmuri, Ph.D.</h1>
                 <Badge className="ml-2 bg-purple-600 text-white border-none">Verified</Badge>
               </div> */}
-              <h2 className="text-base md:text-lg text-muted-foreground">
+              <h2 className="text-base md:text-lg text-muted-foreground font-semibold">
                 Medicinal Chemist specializing in lipid synthesis and drug
                 delivery systems
               </h2>
@@ -255,7 +255,7 @@ const ProfileHeader: React.FC = () => {
               onClick={scrollToEducation}
             >
               <GraduationCap className="mr-2 h-4 w-4" />
-              View Full Education
+              View More Details
             </Button>
           </div>
         </div>

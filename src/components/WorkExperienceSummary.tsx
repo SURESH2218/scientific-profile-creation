@@ -78,7 +78,7 @@ const WorkExperienceSummary: React.FC = () => {
             onClick={scrollToWorkExperience}
           >
             <Briefcase className="mr-2 h-4 w-4" />
-            View Full Experience
+            View More Details
           </Button>
         </div>
       </div>

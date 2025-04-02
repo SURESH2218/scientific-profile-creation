@@ -347,6 +347,7 @@ const Publications = () => {
                   volume: "147",
                   pages: "107112",
                   link: "https://www.sciencedirect.com/science/article/pii/S1537189122001616?via%3Dihub",
+                  featured: "10 citations",
                   citations: 8,
                 },
                 {
@@ -373,6 +374,7 @@ const Publications = () => {
                   volume: "62",
                   pages: "4500–4525",
                   link: "https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b00056",
+                  featured: "10 citations",
                   note: "*Equal Contribution",
                 },
               ].map((paper) => (
@@ -386,7 +388,7 @@ const Publications = () => {
                   onMouseEnter={() => setHighlightedPaper(paper.id)}
                   onMouseLeave={() => setHighlightedPaper(null)}
                 >
-                  <CardHeader className="pb-2">
+                  <CardHeader className="py-2">
                     <div className="flex items-start justify-between">
                       <CardTitle className="text-lg font-semibold flex-1">
                         {paper.title}
@@ -422,7 +424,7 @@ const Publications = () => {
                       </TooltipProvider>
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="pt-0">
+                  <CardContent className="pt-0 pb-0">
                     <div className="text-sm mb-3">
                       {paper.journal}, {paper.year}, {paper.volume},{" "}
                       {paper.pages}
