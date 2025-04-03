@@ -68,6 +68,11 @@ const Publications = () => {
             block: "start",
           });
         }
+      } else if (tabName === "fun") {
+        const funSection = document.getElementById("fun-section");
+        if (funSection) {
+          funSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }
     }, 100);
   };
@@ -113,7 +118,7 @@ const Publications = () => {
           <h2 className="text-2xl font-bold">Publications & Patents</h2>
         </div> */}
 
-        <div className="navigation-container mb-4">
+        <div className="navigation-container mb-6">
           {(() => {
             switch (navStyle) {
               case "floating":
@@ -154,7 +159,7 @@ const Publications = () => {
               case "orbital":
               default:
                 return (
-                  <div className="orbital-nav-container relative w-full h-44 flex items-center justify-center mb-6">
+                  <div className="orbital-nav-container relative w-full h-44 flex items-center justify-center">
                     {/* Connection Lines */}
                     <svg
                       className="absolute inset-0 w-full h-full"

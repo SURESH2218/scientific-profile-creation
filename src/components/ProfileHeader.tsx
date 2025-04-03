@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -35,11 +35,11 @@ const ProfileHeader: React.FC = () => {
         {/* Top sections wrapper */}
         <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           {/* Avatar Section */}
-          <div className="relative col-span-1 md:col-span-2 flex justify-center items-center">
+          <div className="relative col-span-1 md:col-span-2 flex flex-col items-center gap-4">
             <div
               className="relative w-48 h-48 md:w-52 md:h-52 overflow-hidden"
               style={{
-                borderRadius: "0px 90px 0px 70px",
+                borderRadius: "0px 70px 0px 70px",
                 backdropFilter: "blur(9px)",
                 boxShadow: "0 10px 10px 0px rgba(31, 38, 135, 0.37)",
                 border: "1px solid rgba(255, 255, 255, 0.18)",
@@ -62,19 +62,60 @@ const ProfileHeader: React.FC = () => {
               </div> */}
             </div>
 
-            {/* Achievement badges positioned around the avatar */}
-            {/* <div className="absolute -top-2 -right-2 md:right-8 md:top-56">
-              <div className="bg-gradient-to-r from-amber-400 to-amber-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg flex items-center">
-                <Star className="h-3 w-3 mr-1 text-white" fill="white" />
-                Top Scientist
-              </div>
-            </div> */}
-            {/* <div className="absolute bottom-0 -left-2 md:bottom-1/4 md:left-1/4">
-              <div className="bg-gradient-to-r from-teal-400 to-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg flex items-center">
-                <TrendingUp className="h-3 w-3 mr-1" />
-                Leading Researcher
-              </div>
-            </div> */}
+            {/* Impact Score Button */}
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-0.5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                    <div className="px-10 rounded-xl bg-white/5 backdrop-blur-sm flex items-center gap-3 hover:bg-white/10 transition-all">
+                      <Award className="h-5 w-5 text-white" />
+                      <div className="flex flex-col items-start">
+                        <span className="text-[11px] text-white/80">
+                          Impact Score
+                        </span>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-xl font-bold text-white">
+                            782
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent
+                  side="right"
+                  className="bg-white/95 backdrop-blur-sm border-none shadow-xl p-3 rounded-xl"
+                >
+                  <div className="space-y-3 min-w-[180px]">
+                    <div className="pb-2 border-b border-gray-100">
+                      <div className="text-xs text-purple-600 font-medium">
+                        Top 5% in Medicinal Chemistry
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-600">
+                          Publications
+                        </span>
+                        <span className="text-xs font-semibold">312</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-600">Research</span>
+                        <span className="text-xs font-semibold">215</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-600">Community</span>
+                        <span className="text-xs font-semibold">176</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs text-gray-600">Activity</span>
+                        <span className="text-xs font-semibold">79</span>
+                      </div>
+                    </div>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
 
           {/* Main Content Section */}
@@ -111,6 +152,11 @@ const ProfileHeader: React.FC = () => {
             </div>
 
             <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20 p-3 rounded-lg border border-purple-100 dark:border-purple-800/30">
+              <div className="flex justify-end">
+                <p className="text-md bg-gradient-to-r from-purple-600 to-blue-500 text-white px-4 py-1 mb-2 rounded-full">
+                  Overview
+                </p>
+              </div>
               <p className="text-sm md:text-base leading-relaxed">
                 Over seventeen years of experience working in synthetic
                 chemistry labs as a medicinal chemist and team leader, with

@@ -10,6 +10,7 @@ import ActivityFeed from "@/components/ActivityFeed";
 import WorkExperienceSummary from "@/components/WorkExperienceSummary";
 import WorkExperienceModal from "@/components/WorkExperienceModal";
 import ScrollToTop from "@/components/ScrollToTop";
+import FunSection from "@/components/FunSection";
 
 const Index = () => {
   const [isWorkExperienceOpen, setIsWorkExperienceOpen] = useState(false);
@@ -34,6 +35,7 @@ const Index = () => {
           <Education />
           <WorkExperience />
           <Awards />
+          <FunSection />
         </div>
 
         <div className="space-y-4">

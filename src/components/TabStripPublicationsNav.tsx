@@ -51,7 +51,7 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-[-35px]">
+    <div className="w-full max-w-3xl mx-auto">
       <div className="flex items-center justify-center gap-4">
         {tabs.map((tab) => {
           const Icon = tab.icon;
@@ -115,7 +115,7 @@ const TabStripPublicationsNav: React.FC<TabStripPublicationsNavProps> = ({
       </div>
 
       {/* Decorative Background Line */}
-      <div className="mt-4 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className=" h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
     </div>
   );
 };

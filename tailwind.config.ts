@@ -121,7 +121,11 @@ export default {
 				'glass-shimmer': {
 					'0%': { backgroundPosition: '0% 0%' },
 					'100%': { backgroundPosition: '200% 0%' }
-				}
+				},
+				"carousel": {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' },
+				  }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -135,7 +139,8 @@ export default {
 				'slide-right': 'slide-right 0.3s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
-				'glass-shimmer': 'glass-shimmer 6s linear infinite'
+				'glass-shimmer': 'glass-shimmer 6s linear infinite',
+				"carousel": "carousel 30s linear infinite",
 			},
 			backgroundImage: {
 				'glass-gradient': 'linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05))',
